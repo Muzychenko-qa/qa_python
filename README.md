@@ -1,1 +1,13 @@
 # qa_python
+test_add_new_book_add_book_positive_result - добавляет новую книгу в словарь без указания жанра
+test_add_new_book_name_longer_than_40_characters_book_not_in_list - добавляет новую книгу в словарь с названием больше 40 символов
+test_set_book_genre_set_genre_positive_result - устанавливает жанр книги
+test_set_book_genre_genre_not_in_list_not_set_genre - устанавливает книге жанр которого нет в списке 
+test_get_book_genre_get_genre_positive_result - выводит жанр книги по её имени
+test_get_books_with_specific_genre_get_books_positive_result - выводит список книг с определённым жанром
+test_get_books_genre_get_dict_positive_result - выводит текущий словарь 
+test_get_books_for_children_get_books_positive_result - возвращает книги, которые подходят детям
+test_get_books_for_children_genre_age_rating_did_not_pass - проверяет то, что не возвращает книги, которые не подходят детям
+test_add_book_in_favorites_add_valid_value_positive_result - добавляет книгу в избранное
+test_delete_book_from_favorites_delete_book_positive_result - удаляет книгу из избранного
+test_get_list_of_favorites_books_get_list_positive_result - получает список избранных книг
