@@ -8,6 +8,7 @@ class TestBooksCollector:
             ['Алиса в стране чудес', 'Мультфильмы'],
             ['Чапаев и Пустота', 'Фантастика']
         ]
+    book_long_name = 'Очень длинное Очень длинное Очень длинное Очень длинное Очень длинное Очень длинное название'
 
     def test_add_new_book_add_book_positive_result(self):
         collector = BooksCollector()
@@ -16,10 +17,8 @@ class TestBooksCollector:
 
     def test_add_new_book_name_longer_than_40_characters_book_not_in_list(self):
         collector = BooksCollector()
-        collector.add_new_book(
-            'Очень длинное Очень длинное Очень длинное Очень длинное Очень длинное Очень длинное название')
-        assert ('Очень длинное Очень длинноеОчень длинное Очень длинное Очень длинное Очень длинное название'
-                not in collector.books_genre)
+        collector.add_new_book(self.book_long_name)
+        assert self.book_long_name not in collector.books_genre
 
     @pytest.mark.parametrize('name, genre', books_list)
     def test_set_book_genre_set_genre_positive_result(self, name, genre):
@@ -87,4 +86,4 @@ class TestBooksCollector:
         collector = BooksCollector()
         collector.add_new_book('Злая Алиса в стране чудес')
         collector.add_book_in_favorites('Злая Алиса в стране чудес')
-        assert 'Злая Алиса в стране чудес' in collector.favorites
+        assert collector.favorites == ['Злая Алиса в стране чудес']
