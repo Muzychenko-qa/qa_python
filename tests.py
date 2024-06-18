@@ -86,4 +86,4 @@ class TestBooksCollector:
         collector = BooksCollector()
         collector.add_new_book('Злая Алиса в стране чудес')
         collector.add_book_in_favorites('Злая Алиса в стране чудес')
-        assert collector.favorites == ['Злая Алиса в стране чудес']
+        assert collector.get_list_of_favorites_books() == ['Злая Алиса в стране чудес']
